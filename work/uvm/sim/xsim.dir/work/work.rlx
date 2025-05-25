@@ -1,0 +1,19 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:55
+/home/nami/Sumador/rtl/adder.sv,1747934563,systemVerilog,,/home/nami/Sumador/verification/uvm/env/top_env_pkg.sv,,adder,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
+/home/nami/Sumador/verification/uvm/env/top_env.sv,1748148594,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/env/top_env_pkg.sv,1748109905,systemVerilog,/home/nami/Sumador/verification/uvm/tests/top_test_pkg.sv,/home/nami/Sumador/verification/uvm/tests/top_test_pkg.sv,/tools/Xilinx/Vivado/2024.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh;/home/nami/Sumador/verification/uvm/env/top_env.sv,top_env_pkg,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_agent.sv,1748149306,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_config.sv,1748110566,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv,1748141843,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_if.sv,1748098383,systemVerilog,,/home/nami/Sumador/rtl/adder.sv,,adder_uvc_if,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv,1748141479,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_pkg.sv,1748140977,systemVerilog,/home/nami/Sumador/verification/uvm/env/top_env_pkg.sv;/home/nami/Sumador/verification/uvm/tests/top_test_pkg.sv,/home/nami/Sumador/verification/uvm/sv/adder_uvc_if.sv,/tools/Xilinx/Vivado/2024.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh;/home/nami/Sumador/verification/uvm/sv/adder_uvc_sequence_item.sv;/home/nami/Sumador/verification/uvm/sv/adder_uvc_config.sv;/home/nami/Sumador/verification/uvm/sv/adder_uvc_sequencer.sv;/home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv;/home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv;/home/nami/Sumador/verification/uvm/sv/adder_uvc_agent.sv,adder_uvc_pkg,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_sequence_item.sv,1748141698,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/sv/adder_uvc_sequencer.sv,1748149272,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/tb/tb.sv,1748141601,systemVerilog,,,/tools/Xilinx/Vivado/2024.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh,tb,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
+/home/nami/Sumador/verification/uvm/tests/top_test.sv,1748109290,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/tests/top_test_pkg.sv,1748109328,systemVerilog,/home/nami/Sumador/verification/uvm/tb/tb.sv,/home/nami/Sumador/verification/uvm/tb/tb.sv,/tools/Xilinx/Vivado/2024.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh;/home/nami/Sumador/verification/uvm/tests/top_test.sv,top_test_pkg,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
+/tools/Xilinx/Vivado/2024.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh,1724786435,verilog,,,,,,,,,,,,
