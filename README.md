@@ -2,6 +2,18 @@
 
 ![Esquema del sumador](prueba.png)
 
+
+The UVM architecture has many modules where each module has specific task. The next figure show how this architecture is connect using .
+
+- Top
+ - Test
+  - Environment
+   - Agent 
+    - Monitor
+    - Driver
+    - Sequencer
+- DUT    
+
 ![Jerarquí del ambien de verificación UVM](testuvm2.png)
 
 
