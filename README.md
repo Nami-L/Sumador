@@ -1,6 +1,10 @@
-# SPI IP UVM Verification
+# SUMADOR IP UVM Verification
+
+Este proyecto tiene como objetivo que el usuario entienda como se construye una arquitectura UVM Básica.
 
 ## Setup
+
+A continuación
 
 ```bash
 export GIT_ROOT=$(git rev-parse --show-toplevel)
