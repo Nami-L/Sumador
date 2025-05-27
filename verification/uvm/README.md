@@ -4,7 +4,7 @@ Este proyecto tiene como objetivo que el usuario entienda como se construye una 
 
 ## Setup
 
-A continuación
+A continuación se colocan una serie de comando que deben ejecutarse desde terminal.
 
 ```bash
 export GIT_ROOT=$(git rev-parse --show-toplevel)
