@@ -22,7 +22,7 @@ endfunction:new
 function void adder_uvc_sequencer::build_phase(uvm_phase phase);
 
 if(!uvm_config_db#(adder_uvc_config)::get(get_parent(),"","config",m_config))begin
-    `uvm_fatal(get_name(), "Could not retrieve spi_uvc_config from config db")
+    `uvm_fatal(get_name(), "Could not retrieve adder_uvc_config from config db")
 
 end
 endfunction:build_phase

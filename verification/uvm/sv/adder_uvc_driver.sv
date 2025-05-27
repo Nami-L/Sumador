@@ -36,13 +36,17 @@ task adder_uvc_driver::run_phase(uvm_phase phase);
 forever begin
     //Lo que hace este run, por siempre, agarra el drive, agarra una transaction del sequencer
      seq_item_port.get_next_item(req);
-    // do_drive();
+     do_drive();
      seq_item_port.item_done();
 
 end
 endtask: run_phase
 
 task adder_uvc_driver::do_drive();
+  `uvm_info(get_type_name(), {"\n ------ DRIVER (ADDER UVC) ------", req.convert2string()}, UVM_DEBUG)
+
+vif.A = req.m_A_trans;
+vif.B = req.m_B_trans;
 
 endtask: do_drive
 

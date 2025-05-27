@@ -3,7 +3,7 @@
 
 class adder_uvc_agent extends uvm_agent;
   `uvm_component_utils(adder_uvc_agent)
-  uvm_analysis_port #(adder_uvc_agent) analysis_port;
+  uvm_analysis_port #(adder_uvc_sequence_item) analysis_port;
 
 extern function new(string name, uvm_component parent);
 extern function void build_phase(uvm_phase phase);

@@ -1,0 +1,4 @@
+Running: xsim.dir/work.tb/xsimk -wdb /home/nami/Sumador/work/uvm/work/uvm/wdb/tb.wdb -sv_seed 1 -simmode gui -testplusarg UVM_TESTNAME=top_test -testplusarg UVM_VERBOSITY=UVM_MEDIUM -simrunnum 0 -socket 58995
+Design successfully loaded
+Design Loading Memory Usage: 191500 KB (Peak: 191500 KB)
+Design Loading CPU Usage: 1550 ms

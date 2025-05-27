@@ -11,6 +11,10 @@ uvm_analysis_port #(adder_uvc_sequence_item) analysis_port;
   adder_uvc_config                             m_config;
   adder_uvc_sequence_item                      m_trans;
 
+  //VARIABLES AUXILIARES PARA LAS SALIDAS
+
+  //logic [7:0] data_C;
+
   extern function new(string name, uvm_component parent);
 
   extern function void build_phase(uvm_phase phase);
@@ -38,14 +42,20 @@ function void adder_uvc_monitor::build_phase(uvm_phase phase);
 endfunction: build_phase
 
 task adder_uvc_monitor::run_phase(uvm_phase phase);
-
 m_trans= adder_uvc_sequence_item::type_id::create("m_trans");
-
+do_mon();
 endtask: run_phase
 
 task adder_uvc_monitor::do_mon();
+
+
   forever begin
+    //copia el dato a la transaction m_trans que son las variables que vamos a leer
+//es decir, leemos las salida, y lo asignamos a una transation
+m_trans.m_C_trans = vif.C;
+ 
     `uvm_info(get_type_name(), {"\n ------ MONITOR (GPIO UVC) ------ ", m_trans.convert2string()}, UVM_DEBUG)
+    //manda la transaction hacia el siguiente componente
     analysis_port.write(m_trans);
   end
 endtask: do_mon

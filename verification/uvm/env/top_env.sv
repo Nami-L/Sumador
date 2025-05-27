@@ -8,6 +8,9 @@ class top_env extends uvm_env;
   adder_uvc_agent m_adder_agent;
   adder_uvc_config m_adder_config;
 
+  top_vsqr        vsqr;
+
+
 extern function new(string name, uvm_component parent);
 extern function void build_phase(uvm_phase phase);
 extern function void connect_phase(uvm_phase phase);
@@ -25,10 +28,12 @@ m_adder_config.is_active = UVM_ACTIVE;
 uvm_config_db#(adder_uvc_config)::set(this,"m_adder_agent*","config",m_adder_config);
 //instaciar el Agente
 m_adder_agent= adder_uvc_agent::type_id::create("m_adder_agent",this);
+
+vsqr = top_vsqr::type_id::create("vsqr",this);
 endfunction: build_phase
 
 function void top_env::connect_phase(uvm_phase phase);
-
+vsqr.m_adder_sequencer = m_adder_agent.m_sequencer;
 endfunction: connect_phase
 
 

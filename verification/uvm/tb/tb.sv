@@ -5,7 +5,20 @@ module tb;
   
   import top_test_pkg::*;
 
-
+ // Clock signal
+  localparam time CLK_PERIOD = 10ns;
+  logic clk_i = 0;
+  always #(CLK_PERIOD / 2) clk_i = ~clk_i;
+  
+  // Reset signal
+  logic rst_i = 1;
+  initial begin
+    repeat(2) @(posedge clk_i);
+    rst_i = 1;
+    @(posedge clk_i);
+    rst_i = 0;
+  end
+  
 
 //Interface
 
@@ -13,8 +26,8 @@ adder_uvc_if adder_vif();
 
 adder dut(
  .A(adder_vif.A),
- .B(adder_vif.A),
- .C(adder_vif.A)
+ .B(adder_vif.B),
+ .C(adder_vif.C)
 );
 
 
