@@ -2,6 +2,9 @@
 
 ![Esquema del sumador](prueba.png)
 
+![Jerarquí del ambien de verificación UVM](testuvm2.png)
+
+
 Este proyecto tiene como objetivo que el usuario entienda como se construye una arquitectura UVM Básica.
 
 ## Setup
