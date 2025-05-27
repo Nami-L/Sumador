@@ -2,7 +2,13 @@
 
 Este proyecto tiene como objetivo que el usuario entienda como se construye una arquitectura UVM Básica.
 
-## Setup
+## Características
+- Lenguaje Systemverilog
+- Simulación en Vivado
+- Visual Studio 
+
+
+### Setup
 
 A continuación
 
