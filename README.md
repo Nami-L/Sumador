@@ -1,5 +1,7 @@
 # SUMADOR IP UVM Verification
 
+![Esquema del sumador](prueba.png)
+
 Este proyecto tiene como objetivo que el usuario entienda como se construye una arquitectura UVM Básica.
 
 ## Setup
