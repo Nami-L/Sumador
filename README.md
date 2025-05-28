@@ -3,15 +3,15 @@
 ![Esquema del sumador](prueba.png)
 
 
-The UVM architecture has many modules where each module has specific task. The next figure show how this architecture is connect using .
-
+The UVM architecture consists of many modules, where each module has a specific task.
+The following figure shows how this architecture is connected using the UVM hierarchy:
 - Top
- - Test
-  - Environment
-   - Agent 
-    - Monitor
-    - Driver
-    - Sequencer
+  - Test
+    - Environment
+      - Agent 
+        - Monitor
+        - Driver
+        - Sequencer
 - DUT    
 
 ![Jerarquí del ambien de verificación UVM](testuvm2.png)
