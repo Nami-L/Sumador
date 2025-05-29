@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue May 27 09:18:12 2025
-# Process ID         : 46690
+# Start of session at: Thu May 29 09:41:47 2025
+# Process ID         : 8453
 # Current directory  : /home/nami/Sumador/work/uvm/sim
 # Command line       : xsim -log /home/nami/Sumador/work/uvm/logs/simulate.log -mode tcl -source {xsim.dir/work.tb/xsim_script.tcl}
 # Log file           : /home/nami/Sumador/work/uvm/logs/simulate.log
@@ -19,11 +19,11 @@
 # Host memory        : 8078 MB
 # Swap memory        : 2243 MB
 # Total Virtual      : 10322 MB
-# Available Virtual  : 7153 MB
+# Available Virtual  : 7250 MB
 #-----------------------------------------------------------
 source xsim.dir/work.tb/xsim_script.tcl
-# xsim {work.tb} -testplusarg UVM_TESTNAME=top_test -testplusarg UVM_VERBOSITY=UVM_MEDIUM -wdb {/home/nami/Sumador/work/uvm/wdb/tb.wdb} -autoloadwcfg -tclbatch {/home/nami/Sumador/verification/uvm/scripts/vivado/run.tcl} -onfinish quit -onerror stop -sv_seed 1
-Time resolution is 1 ps
+# xsim {work.tb} -testplusarg UVM_TESTNAME=top_test -testplusarg UVM_VERBOSITY=UVM_DEBUG -wdb {/home/nami/Sumador/work/uvm/wdb/tb.wdb} -autoloadwcfg -tclbatch {/home/nami/Sumador/verification/uvm/scripts/vivado/run.tcl} -onfinish quit -onerror stop -stats -sv_seed 1
+Time resolution is 100 ps
 source /home/nami/Sumador/verification/uvm/scripts/vivado/run.tcl
 ## set tclStart [clock seconds]
 ## set scriptsDir [file normalize [file dirname [info script]]]
@@ -89,7 +89,7 @@ UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_packag
 
   No instance or type overrides are registered with this factory
 
-All types registered with the factory: 62 total
+All types registered with the factory: 63 total
   Type Name
   ---------
   adder_uvc_agent
@@ -100,6 +100,7 @@ All types registered with the factory: 62 total
   adder_uvc_sequence_item
   adder_uvc_sequencer
   top_env
+  top_scoreboard
   top_test
   top_test_vseq
   top_vsqr
@@ -109,12 +110,1088 @@ All types registered with the factory: 62 total
 
 
 UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0 ns: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
-INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-run: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:06 . Memory (MB): peak = 1400.301 ; gain = 8.004 ; free physical = 1324 ; free virtual = 5826
-INFO: [Common 17-344] 'run' was cancelled
-xsim: Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:08 . Memory (MB): peak = 1400.301 ; gain = 185.691 ; free physical = 1326 ; free virtual = 5828
-INFO: [Common 17-344] 'source' was cancelled
-exit
-INFO: xsimkernel Simulation Memory Usage: 1074648 KB (Peak: 1140184 KB), Simulation CPU Usage: 7300 ms
-INFO: [Common 17-206] Exiting xsim at Tue May 27 09:18:24 2025...
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'run'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_reset' (id=185) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'pre_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'pre_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.reset' (id=194) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'post_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_reset' (id=203) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'post_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'post_reset'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_configure' (id=212) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'pre_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'pre_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.configure' (id=221) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'post_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_configure' (id=230) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'post_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'post_configure'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'pre_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_main' (id=239) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'pre_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'pre_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.main' (id=248) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'post_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_main' (id=257) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'post_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'post_main'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.pre_shutdown' (id=266) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'pre_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'pre_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 0 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.shutdown' (id=275) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24209) @ 0 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 55 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 60 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    20, m_C_trans =   116
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 65 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    57, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 70 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    57, m_B_trans =    20, m_C_trans =    77
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 75 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    16, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 80 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    16, m_B_trans =    11, m_C_trans =    27
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 85 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    68, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 90 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    68, m_B_trans =    19, m_C_trans =    87
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 95 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 100 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    15, m_C_trans =   102
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 105 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    42, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 110 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    42, m_B_trans =    16, m_C_trans =    58
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 115 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    80, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 120 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    80, m_B_trans =    14, m_C_trans =    94
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 125 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    29, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 130 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    29, m_B_trans =    20, m_C_trans =    49
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 135 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    63, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 140 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    63, m_B_trans =    16, m_C_trans =    79
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 145 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    19, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 150 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    19, m_B_trans =    15, m_C_trans =    34
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 155 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    40, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 160 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    40, m_B_trans =    16, m_C_trans =    56
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 165 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    55, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 170 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    55, m_B_trans =    16, m_C_trans =    71
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 175 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    79, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 180 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    79, m_B_trans =    19, m_C_trans =    98
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 185 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    17, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 190 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    17, m_C_trans =    76
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 195 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    93, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 200 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    93, m_B_trans =    11, m_C_trans =   104
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 205 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    93, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 210 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    93, m_B_trans =    16, m_C_trans =   109
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 215 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    67, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 220 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    67, m_B_trans =    20, m_C_trans =    87
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 225 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    19, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 230 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    19, m_B_trans =    19, m_C_trans =    38
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 235 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    10, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 240 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    10, m_B_trans =    16, m_C_trans =    26
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 245 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    24, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 250 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    24, m_B_trans =    19, m_C_trans =    43
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 255 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 260 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    16, m_C_trans =   112
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 265 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 270 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    12, m_C_trans =    99
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 275 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    28, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 280 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    28, m_B_trans =    15, m_C_trans =    43
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 285 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    13, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 290 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    13, m_C_trans =    72
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 295 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    71, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 300 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    71, m_B_trans =    10, m_C_trans =    81
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 305 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    20, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 310 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    20, m_B_trans =    11, m_C_trans =    31
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 315 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     8, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 320 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     8, m_B_trans =    16, m_C_trans =    24
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 325 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    57, m_B_trans =    18, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 330 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    57, m_B_trans =    18, m_C_trans =    75
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 335 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    62, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 340 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    62, m_B_trans =    14, m_C_trans =    76
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 345 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    88, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 350 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    88, m_B_trans =    15, m_C_trans =   103
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 355 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    83, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 360 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    83, m_B_trans =    11, m_C_trans =    94
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 365 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    91, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 370 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    91, m_B_trans =    16, m_C_trans =   107
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 375 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    10, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 380 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    10, m_B_trans =    14, m_C_trans =    24
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 385 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     5, m_B_trans =    18, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 390 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     5, m_B_trans =    18, m_C_trans =    23
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 395 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    64, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 400 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    64, m_B_trans =    20, m_C_trans =    84
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 405 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    18, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 410 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    18, m_C_trans =   114
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 415 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    38, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 420 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    38, m_B_trans =    14, m_C_trans =    52
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 425 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    16, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 430 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    16, m_B_trans =    12, m_C_trans =    28
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 435 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    95, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 440 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    95, m_B_trans =    11, m_C_trans =   106
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 445 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    67, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 450 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    67, m_B_trans =    14, m_C_trans =    81
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 455 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    22, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 460 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    22, m_B_trans =    12, m_C_trans =    34
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 465 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    77, m_B_trans =    13, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 470 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    77, m_B_trans =    13, m_C_trans =    90
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 475 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    77, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 480 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    77, m_B_trans =    10, m_C_trans =    87
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 485 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    75, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 490 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    75, m_B_trans =    10, m_C_trans =    85
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 495 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    18, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 500 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    18, m_C_trans =    77
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 505 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    33, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 510 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    33, m_B_trans =    12, m_C_trans =    45
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 515 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    75, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 520 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    75, m_B_trans =    10, m_C_trans =    85
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 525 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    73, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 535 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    18, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 540 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    18, m_C_trans =   105
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 545 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    66, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 550 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    66, m_B_trans =    14, m_C_trans =    80
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 555 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    79, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 560 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    79, m_B_trans =    14, m_C_trans =    93
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 565 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    83, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 575 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    88, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 580 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    88, m_B_trans =    16, m_C_trans =   104
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 585 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    95, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 590 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    95, m_B_trans =    12, m_C_trans =   107
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 595 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     1, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 600 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     1, m_B_trans =    12, m_C_trans =    13
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 605 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    22, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 610 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    22, m_B_trans =    10, m_C_trans =    32
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 615 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    34, m_B_trans =    13, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 620 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    34, m_B_trans =    13, m_C_trans =    47
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 625 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    70, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 630 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    70, m_B_trans =    20, m_C_trans =    90
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 635 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    79, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 640 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    79, m_B_trans =    19, m_C_trans =    98
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 645 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    84, m_B_trans =    17, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 650 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    84, m_B_trans =    17, m_C_trans =   101
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 655 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    25, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 660 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    25, m_B_trans =    10, m_C_trans =    35
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 665 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    43, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 670 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    43, m_B_trans =    11, m_C_trans =    54
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 675 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 680 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    59, m_B_trans =    10, m_C_trans =    69
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 685 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =   100, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 690 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =   100, m_B_trans =    11, m_C_trans =   111
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 695 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    83, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 700 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    83, m_B_trans =    16, m_C_trans =    99
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 705 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     1, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 710 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     1, m_B_trans =    11, m_C_trans =    12
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 715 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    51, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 720 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    51, m_B_trans =    15, m_C_trans =    66
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 725 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    75, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 730 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    75, m_B_trans =    15, m_C_trans =    90
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 735 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    37, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 740 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    37, m_B_trans =    10, m_C_trans =    47
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 745 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    66, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 750 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    66, m_B_trans =    19, m_C_trans =    85
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 755 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    72, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 760 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    72, m_B_trans =    20, m_C_trans =    92
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 765 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    18, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 770 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    18, m_B_trans =    20, m_C_trans =    38
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 775 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    32, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 780 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    32, m_B_trans =    14, m_C_trans =    46
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 785 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 790 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    87, m_B_trans =    16, m_C_trans =   103
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 795 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    52, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 800 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    52, m_B_trans =    14, m_C_trans =    66
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 805 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    15, m_B_trans =    17, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 810 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    15, m_B_trans =    17, m_C_trans =    32
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 815 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    74, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 820 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    74, m_B_trans =    14, m_C_trans =    88
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 825 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    54, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 830 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    54, m_B_trans =    14, m_C_trans =    68
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 835 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    68, m_B_trans =    13, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 840 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    68, m_B_trans =    13, m_C_trans =    81
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 845 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    41, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 850 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    41, m_B_trans =    12, m_C_trans =    53
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 855 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    63, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 860 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    63, m_B_trans =    12, m_C_trans =    75
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 865 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    85, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 870 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    85, m_B_trans =    20, m_C_trans =   105
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 875 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    22, m_B_trans =    18, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 880 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    22, m_B_trans =    18, m_C_trans =    40
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 885 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    98, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 890 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    98, m_B_trans =    15, m_C_trans =   113
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 895 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    80, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 900 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    80, m_B_trans =    20, m_C_trans =   100
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 905 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    15, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 910 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    15, m_B_trans =    11, m_C_trans =    26
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 915 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    68, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 920 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    68, m_B_trans =    15, m_C_trans =    83
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 925 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    15, m_B_trans =    13, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 930 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    15, m_B_trans =    13, m_C_trans =    28
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 935 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    25, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 940 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    25, m_B_trans =    12, m_C_trans =    37
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 945 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     3, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 950 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     3, m_B_trans =    19, m_C_trans =    22
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 955 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    37, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 960 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    37, m_B_trans =    16, m_C_trans =    53
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 965 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    72, m_B_trans =    14, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 970 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    72, m_B_trans =    14, m_C_trans =    86
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 975 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    69, m_B_trans =    16, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 980 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    69, m_B_trans =    16, m_C_trans =    85
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 985 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    90, m_B_trans =    10, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 990 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    90, m_B_trans =    10, m_C_trans =   100
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 995 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    36, m_B_trans =    15, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 1000 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    36, m_B_trans =    15, m_C_trans =    51
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 1005 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    11, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 1010 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    96, m_B_trans =    11, m_C_trans =   107
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 1015 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     0, m_B_trans =    19, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 1020 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     0, m_B_trans =    19, m_C_trans =    19
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 1025 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    37, m_B_trans =    17, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 1030 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    37, m_B_trans =    17, m_C_trans =    54
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 1035 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    17, m_B_trans =    12, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 1040 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =    17, m_B_trans =    12, m_C_trans =    29
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_driver.sv(48) @ 1045 ns: uvm_test_top.m_env.m_adder_agent.m_driver [adder_uvc_driver] 
+ ------ DRIVER (ADDER UVC) ------
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     4, m_B_trans =    20, m_C_trans = x
+
+UVM_INFO /home/nami/Sumador/verification/uvm/sv/adder_uvc_monitor.sv(63) @ 1050 ns: uvm_test_top.m_env.m_adder_agent.m_monitor [adder_uvc_monitor] 
+ ------ MONITOR (GPIO UVC) ------ 
+TRANSACTION INFORMATION (ADDER UVC):
+m_A_trans =     4, m_B_trans =    20, m_C_trans =    24
+
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19948) @ 1095 ns: reporter [TEST_DONE] All end-of-test objections have been dropped. Calling stop tasks
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1095 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15411) @ 1095 ns: reporter [PH/TRC/EXE/ALLDROP] Phase 'common.run' (id=160) PHASE EXIT ALL_DROPPED
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 1095 ns: reporter [PH_READY_TO_END] Phase 'common.run' (id=160) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(15423) @ 1095 ns: reporter [PH_READY_TO_END] Phase 'uvm.uvm_sched.post_shutdown' (id=284) PHASE READY TO END
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 1095 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'post_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 1095 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'post_shutdown'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 1095 ns: uvm_test_top.m_env.m_adder_agent.m_sequencer [PHASESEQ] No default sequence to kill for phase 'run'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(24244) @ 1095 ns: uvm_test_top.m_env.vsqr [PHASESEQ] No default sequence to kill for phase 'run'
+UVM_INFO /tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1095 ns: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  272
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[NO_DPI_TSTNAME]     1
+[PH/TRC/EXE/ALLDROP]     1
+[PHASESEQ]    52
+[PH_READY_TO_END]    13
+[RNTST]     1
+[TEST_DONE]     2
+[UVM/COMP/NAMECHECK]     1
+[UVM/FACTORY/PRINT]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[adder_uvc_driver]   100
+[adder_uvc_monitor]    98
+
+$finish called at time : 1095 ns : File "/tools/Xilinx/Vivado/2024.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit 0
+INFO: Simulation Memory Usage: 288292 KB (Peak: 330684 KB)
+INFO: Simulation CPU Usage: 1520 ms
+INFO: [Common 17-206] Exiting xsim at Thu May 29 09:41:51 2025...

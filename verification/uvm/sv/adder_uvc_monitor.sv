@@ -50,8 +50,14 @@ task adder_uvc_monitor::do_mon();
 
 
   forever begin
+
+    @(vif.C); //
     //copia el dato a la transaction m_trans que son las variables que vamos a leer
 //es decir, leemos las salida, y lo asignamos a una transation
+@(vif.cb_drv_neg);
+
+m_trans.m_A_trans = vif.A;
+m_trans.m_B_trans = vif.B;
 m_trans.m_C_trans = vif.C;
  
     `uvm_info(get_type_name(), {"\n ------ MONITOR (GPIO UVC) ------ ", m_trans.convert2string()}, UVM_DEBUG)

@@ -28,8 +28,8 @@ task top_test_vseq::adder_rand_seq();
         // creado dentro de tu clase spi_uvc_sequence_base
 
         //el objeto es m_tras y accedemos al item
-        m_trans.m_A_trans inside {[0 : 255]};
-        m_trans.m_B_trans inside {[0 : 255]};
+        m_trans.m_A_trans inside {[0 : 100]};
+        m_trans.m_B_trans inside {[10 : 20 ]};
 
       }))
     `uvm_fatal("RAND_ERROR", "Randomization error!")
@@ -40,15 +40,14 @@ endtask : adder_rand_seq
 task top_test_vseq::body();
 
   // Initial delay
-  #5000ns;
+  #(50ns);
 
-  repeat (10) begin
+  repeat (100) begin
     adder_rand_seq();
-    #500ns;
   end
 
   // Drain time
-  #5000ns;
+  #(50ns);
 
 endtask : body
 

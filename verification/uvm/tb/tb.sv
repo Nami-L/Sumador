@@ -22,7 +22,7 @@ module tb;
 
 //Interface
 
-adder_uvc_if adder_vif();
+adder_uvc_if adder_vif(clk_i);
 
 adder dut(
  .A(adder_vif.A),

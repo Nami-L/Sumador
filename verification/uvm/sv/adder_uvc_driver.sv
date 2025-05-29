@@ -43,12 +43,20 @@ end
 endtask: run_phase
 
 task adder_uvc_driver::do_drive();
+
+@(vif.cb_drv);
   `uvm_info(get_type_name(), {"\n ------ DRIVER (ADDER UVC) ------", req.convert2string()}, UVM_DEBUG)
 
-vif.A = req.m_A_trans;
-vif.B = req.m_B_trans;
+vif.cb_drv.A <= req.m_A_trans;
+vif.cb_drv.B <= req.m_B_trans;
+
+//@(vif.cb_drv_neg);
+
+//req.m_C_trans = vif.C;
+//`uvm_info(get_type_name(), {"\n ------ DRIVER (ADDER UVC) ------", req.convert2string()}, UVM_DEBUG)
 
 endtask: do_drive
+
 
 
 `endif // DRIVER_UVC_DRIVER_SV
