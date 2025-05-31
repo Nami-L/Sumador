@@ -25,11 +25,11 @@ task top_test_vseq::adder_rand_seq();
 
   if (!(seq.randomize() with {
         // m_trans no se declara ni se crea en top_test_vseq, porque ya está declarado y 
-        // creado dentro de tu clase spi_uvc_sequence_base
+        // creado dentro de tu clase adder_uvc_sequence_base
 
         //el objeto es m_tras y accedemos al item
-        m_trans.m_A_trans inside {[0 : 100]};
-        m_trans.m_B_trans inside {[10 : 20 ]};
+        m_trans.m_A_trans inside {[25 : 50]};
+        m_trans.m_B_trans inside {[50 : 75 ]};
 
       }))
     `uvm_fatal("RAND_ERROR", "Randomization error!")
@@ -42,7 +42,7 @@ task top_test_vseq::body();
   // Initial delay
   #(50ns);
 
-  repeat (100) begin
+  repeat (10000) begin
     adder_rand_seq();
   end
 

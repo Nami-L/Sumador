@@ -1,7 +1,6 @@
 `ifndef ADDER_UVC_SEQUENCER_SV
 `define ADDER_UVC_SEQUENCER_SV
 
-//typedef uvm_sequencer #(spi_uvc_sequence_item) spi_uvc_sequencer;
 
 class adder_uvc_sequencer extends uvm_sequencer #(adder_uvc_sequence_item);
 
