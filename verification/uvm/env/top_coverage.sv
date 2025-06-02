@@ -12,9 +12,11 @@ class top_coverage extends uvm_component;
 
     covergroup m_cov;
 
-    cp_A: coverpoint  m_trans.m_A_trans{bins A_trans_bin[]={[25:50]};}
-    cp_B: coverpoint  m_trans.m_B_trans{bins B_trans_bin[]={[100:200]};}
+    cp_A: coverpoint  m_trans.m_A_trans{bins A_trans_bin[]={[0:50]};}
+    cp_B: coverpoint  m_trans.m_B_trans{bins B_trans_bin[]={[0:50]};}
+    cp_C: coverpoint  m_trans.m_C_trans{bins C_trans_bin[]={[0:100]};}
 
+    cross_AB: cross cp_A, cp_B;
 
     endgroup
 
@@ -39,6 +41,7 @@ endfunction: build_phase
 function void top_coverage::write_adder(input adder_uvc_sequence_item t);
     m_trans = t;
     m_cov.sample();
+
 
 endfunction : write_adder
 

@@ -3,7 +3,7 @@
 Nov  8 2024
 22:36:55
 /home/nami/Sumador/rtl/adder.sv,1747934563,systemVerilog,,/home/nami/Sumador/verification/uvm/env/top_env_pkg.sv,,adder,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
-/home/nami/Sumador/verification/uvm/env/top_coverage.sv,1748628772,verilog,,,,,,,,,,,,
+/home/nami/Sumador/verification/uvm/env/top_coverage.sv,1748717419,verilog,,,,,,,,,,,,
 /home/nami/Sumador/verification/uvm/env/top_env.sv,1748582389,verilog,,,,,,,,,,,,
 /home/nami/Sumador/verification/uvm/env/top_env_pkg.sv,1748582238,systemVerilog,/home/nami/Sumador/verification/uvm/tests/top_test_pkg.sv,/home/nami/Sumador/verification/uvm/tests/top_test_pkg.sv,/tools/Xilinx/Vivado/2024.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh;/home/nami/Sumador/verification/uvm/env/top_vsqr.sv;/home/nami/Sumador/verification/uvm/env/top_scoreboard.sv;/home/nami/Sumador/verification/uvm/env/top_env.sv;/home/nami/Sumador/verification/uvm/env/top_coverage.sv,top_env_pkg,,uvm,,GIT_DIR="/home/nami/Sumador/verification/uvm",,,,
 /home/nami/Sumador/verification/uvm/env/top_scoreboard.sv,1748591330,verilog,,,,,,,,,,,,
