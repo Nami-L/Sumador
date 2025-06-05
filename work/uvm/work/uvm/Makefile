@@ -1,1 +1,0 @@
-/home/nami/Sumador/verification/uvm/scripts/makefiles/Makefile.xilinx

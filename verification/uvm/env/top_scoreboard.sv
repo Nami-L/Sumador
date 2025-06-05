@@ -48,9 +48,9 @@ endfunction : write_adder
       foreach (m_adder_queue[i]) begin
 
      if((m_adder_queue[i].m_A_trans + m_adder_queue[i].m_B_trans) ==m_adder_queue[i].m_C_trans) begin
-     m_num_passed = m_num_passed +1;
+     m_num_passed++;
      end else begin
-     m_num_failed = m_num_failed +1;
+     m_num_failed++;
      end
      end
 

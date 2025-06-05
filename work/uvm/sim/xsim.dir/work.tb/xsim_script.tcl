@@ -1,1 +1,0 @@
-xsim {work.tb} -testplusarg UVM_TESTNAME=top_test -testplusarg UVM_VERBOSITY=UVM_DEBUG -wdb {/home/nami/Sumador/work/uvm/wdb/tb.wdb} -autoloadwcfg -tclbatch {/home/nami/Sumador/verification/uvm/scripts/vivado/run.tcl} -onfinish quit -onerror stop -stats -sv_seed 1

@@ -29,7 +29,7 @@ m_adder_config.is_active = UVM_ACTIVE;
 uvm_config_db#(adder_uvc_config)::set(this,"m_adder_agent*","config",m_adder_config);
 //instaciar el Agente
 m_adder_agent= adder_uvc_agent::type_id::create("m_adder_agent",this);
-m_coverage = top_coverage::type_id::create("m_adder_covergae",this);
+m_coverage = top_coverage::type_id::create("m_adder_coverage",this);
 m_scoreboard= top_scoreboard::type_id::create("m_adder_scoreboard",this);
 vsqr = top_vsqr::type_id::create("vsqr",this);
 endfunction: build_phase

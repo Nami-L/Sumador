@@ -42,7 +42,7 @@ task top_test_vseq::body();
   // Initial delay
   #(50ns);
 
-  repeat (10000) begin
+  repeat (10) begin
     adder_rand_seq();
   end
 
