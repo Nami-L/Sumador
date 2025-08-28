@@ -28,8 +28,8 @@ task top_test_vseq::adder_rand_seq();
         // creado dentro de tu clase adder_uvc_sequence_base
 
         //el objeto es m_tras y accedemos al item
-        m_trans.m_A_trans inside {[25 : 50]};
-        m_trans.m_B_trans inside {[50 : 75 ]};
+        m_trans.m_A_trans inside {[0 : 10]};
+        m_trans.m_B_trans inside {[0: 10 ]};
 
       }))
     `uvm_fatal("RAND_ERROR", "Randomization error!")

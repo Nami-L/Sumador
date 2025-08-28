@@ -12,9 +12,9 @@ class top_coverage extends uvm_component;
 
     covergroup m_cov;
 
-    cp_A: coverpoint  m_trans.m_A_trans{bins A_trans_bin[]={[0:50]};}
-    cp_B: coverpoint  m_trans.m_B_trans{bins B_trans_bin[]={[0:50]};}
-    cp_C: coverpoint  m_trans.m_C_trans{bins C_trans_bin[]={[0:100]};}
+    cp_A: coverpoint  m_trans.m_A_trans{bins A_trans_bin[]={[0:10]};}
+    cp_B: coverpoint  m_trans.m_B_trans{bins B_trans_bin[]={[0:10]};}
+    cp_C: coverpoint  m_trans.m_C_trans{bins C_trans_bin[]={[0:20]};}
 
     cross_AB: cross cp_A, cp_B;
 

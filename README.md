@@ -32,3 +32,7 @@ ln -sf $GIT_ROOT/verification/uvm/scripts/setup/setup_vivado_eda.sh
 source setup_vivado_eda.sh
 make
 ```
+make compile
+make elaborate
+make sim VERBOSITY=UVM_DEBUG #Solo ver mensajes
+make sim VERBOSITY=UVM_DEBUG GUI_MODE=true # abrir la interfaz grafica
