@@ -36,7 +36,7 @@ task adder_uvc_driver::run_phase(uvm_phase phase);
 forever begin
     //Lo que hace este run, por siempre, agarra el drive, agarra una transaction del sequencer
      seq_item_port.get_next_item(req);
-     do_drive();
+     do_drive(); // Ejecuta esta tarea
      seq_item_port.item_done();
 
 end
