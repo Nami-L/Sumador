@@ -36,3 +36,22 @@ make compile
 make elaborate
 make sim VERBOSITY=UVM_DEBUG #Solo ver mensajes
 make sim VERBOSITY=UVM_DEBUG GUI_MODE=true # abrir la interfaz grafica
+
+# Configurar directorio de cobertura
+set_property xsim.elaborate.coverage.dir ./ [get_filesets sim_1]
+
+# Tipo de cobertura
+set_property xsim.elaborate.coverage.type objects [get_filesets sim_1]
+
+# Exportar reporte HTML
+export_xsim_coverage -open_html true
+
+# Guardar base de datos de cobertura
+write_xsim_coverage -cov_db_name ./add_new_dir/add_new_cov_name
+
+set_property xsim.elaborate.coverage.dir ./ [get_filesets sim_1]
+set_property xsim.elaborate.coverage.type objects [get_filesets sim_1]
+export_xsim_coverage
+<!-- export_xsim_coverage -open_html true-->
+exec xdg-open ./xsim_coverage_report/functionalCoverageReport/dashboard.html &
+write_xsim_coverage -cov_db_name ./add_new_dir/add_new_cov_name

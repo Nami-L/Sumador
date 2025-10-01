@@ -41,8 +41,8 @@ GUI_MODE  ?= false
 RUN_FLAGS ?= -onfinish quit
 
 # Code Coverage
-CODE_COV  ?= false
-COV_FLAGS ?=
+CODE_COV  ?= true
+COV_FLAGS ?= 
 
 # ================================  CONTROL  ==================================
 
@@ -51,9 +51,11 @@ ifeq ($(GUI_MODE),true)
 	RUN_FLAGS = -gui &
 endif
 
-# Code Coverage switch
+# Code Coverage switchs
+# Este comando ira en Xelab, especificado en la pagina 147 y 158 vivado
 ifeq ($(CODE_COV),true)
-	COV_FLAGS += -cm line+tgl
+# comando para guardar la covertura  cc, con el cov_db_dir creo la carpeta y con cov_dv_name creo el grupo donde estaran todos los files
+	COV_FLAGS += -cc_type sbct -cov_db_dir $(RUN_DIR)/coverage_r -cov_db_name coverage_db
 endif
 
 # ==============================  TOOLS SETUP  ================================
@@ -61,8 +63,6 @@ endif
 # Files
 RTL_FILES = $(RTL_DIR)/adder.sv
 SVE = -f $(UVM_DIR)/sve.f
-VERDI_FILE = $(VERDI_DIR)/verdi.tcl
-DPI_FILE = $(DPI_DIR)/external.o
 
 # UVCs
 UVCS = -f $(UVM_DIR)/adder_uvc.f
@@ -80,10 +80,12 @@ XELAB_FLAGS = tb -debug all \
 							-s work.tb \
 							-mt 10 \
 							-timescale 1ns/100ps \
+							$(COV_FLAGS) \
 							-L work -L xil_defaultlib -L uvm \
 							-override_timeunit -override_timeprecision \
 							-L xpm -L unisims_ver -L unimacro_ver -L secureip \
 							-log $(LOGS_DIR)/elaborate.log
+
 
 # -v 2    to check for C errors
 XSIM_FLAGS = work.tb -wdb $(WDB_DIR)/tb.wdb \
@@ -93,37 +95,11 @@ XSIM_FLAGS = work.tb -wdb $(WDB_DIR)/tb.wdb \
 						 -stats -onerror stop \
 						 -log $(LOGS_DIR)/simulate.log \
 						 -sv_seed $(SEED) \
-						 $(RUN_FLAGS)
+						 $(RUN_FLAGS) 
+
 
 WAVE_FLAGS = work.tb -view $(WDB_DIR)/tb.wdb -gui
 
-VCS_FLAGS = -full64 -sverilog -ntb_opts uvm-1.2 \
-			-lca -debug_access+all -kdb \
-			-timescale=1ps/100fs $(FILES) \
-			-l $(LOGS_DIR)/$(CUR_DATE)_comp.log \
-			-top tb \
-			-j8 \
-			$(VCS_DEFINES) \
-			$(COV_FLAGS) \
-			$(DPI_FILE)
-
-SIMV_FLAGS = +UVM_TESTNAME=$(TEST) +UVM_VERBOSITY=$(VERBOSITY) \
-			-l $(LOGS_DIR)/$(CUR_DATE)_simv.log \
-			+UVM_TR_RECORD +UVM_LOG_RECORD +UVM_NO_RELNOTES \
-			+UVM_VERDI_TRACE=HIER+RAL+TLM \
-			$(SIMV_ARGS) \
-			$(COV_FLAGS) \
-			-ucli -do $(UVM_DIR)/run.tcl \
-			$(RUN_FLAGS)
-
-URG_FLAGS = -dir simv.vdb -format both \
-			-log $(LOGS_DIR)/$(CUR_DATE)_cov.log \
-			-report $(COV_DIR)
-
-# VERDI Configuration (see work/sim/verdi.cmd)
-VERDI_FLAGS = -ssf novas.fsdb -dbdir simv.daidir -nologo -q
-VERDI_PLAY  = -play $(VERDI_FILE)
-VERDI_COV   = -cov -covdir simv.vdb -nologo -q
 
 # Colors
 C_RED := \033[31m
@@ -180,6 +156,7 @@ vars: ## Print Makefile variables
 	@echo "VERDI_DIR   = $(VERDI_DIR)"
 	@echo "RTL_DIR     = $(RTL_DIR)"
 	@echo "DPI_DIR     = $(DPI_DIR)"
+	@echo "TCL_DIR     = $(TCL_DIR)"
 	@echo ""
 	@echo -e "$(C_ORA)UVM variables...$(NC)"
 	@echo "TEST        = $(TEST)"
@@ -212,49 +189,23 @@ sim: ## Runs XSIM simulation using SEED
 	@echo -e "$(C_ORA)Running simulation SEED=$(SEED)$(NC)"
 	@mkdir -p $(WDB_DIR)
 	cd $(RUN_DIR) && xsim $(XSIM_FLAGS) 
-#______________________________________________________________________________
-
-.PHONY: random
-random: ## Runs simv simulation using a random seed
-	@echo -e "$(C_ORA)Running simulation with random seed$(NC)"
-	cd $(RUN_DIR) && ./simv +ntb_random_seed_automatic $(SIMV_FLAGS)
-#______________________________________________________________________________
-
-.PHONY: wave
-wave: ## Open vivado waveform
-	@echo -e "$(C_ORA)Openning waveform$(NC)"
-	cd $(RUN_DIR) && xsim $(WAVE_FLAGS)
-#______________________________________________________________________________
-
-.PHONY: verdi-play
-verdi-play: ## Opens Verdi GUI running verdi.tcl file
-	@echo -e "$(C_ORA)Openning Verdi running verdi.cmd$(NC)"
-	cd $(RUN_DIR) && verdi $(VERDI_FLAGS) $(VERDI_PLAY) &
-#______________________________________________________________________________
-
-.PHONY: verdi-cov
-verdi-cov: ## Open coverage report in Verdi
-	@echo -e "$(C_ORA)Creating coverage report$(NC)"
-	cd $(RUN_DIR) && verdi $(VERDI_COV) &
-#______________________________________________________________________________
-
+#_________________________________________________________________________________________________________________
+#xcrg necesita saber la ruta de la cobertura para ser leida 
 .PHONY: coverage
-coverage: ## Create coverage report
-	@echo -e "$(C_ORA)Creating coverage report$(NC)"
-	@mkdir -p $(COV_DIR)
-	cd $(RUN_DIR) && urg $(URG_FLAGS)
+coverage: ## Run Coverage 
+	@echo -e "$(C_ORA)Running Coverage $(NC)"
+	mkdir -p $(RUN_DIR)/report_r/codeCoverageReport
+	cd $(RUN_DIR) && xcrg -cov_db_dir $(RUN_DIR)/coverage_r -cov_db_name coverage_db -cc_fullfile -report_dir $(RUN_DIR)/report_r -report_format html
 #______________________________________________________________________________
 
-.PHONY: compile-dpi
-compile-dpi: ## Run dpi (C/C++) compilation
-	@echo -e "$(C_ORA)Compiling dpi (C/C++) code$(NC)"
-	g++ -c $(DPI_DIR)/external.cpp -o $(DPI_DIR)/external.o
-#______________________________________________________________________________
+.PHONY: open-coverage
+open-coverage: ## Open with Firefox
+	firefox $(RUN_DIR)/report_r/functionalCoverageReport/dashboard.html
 
 .PHONY: clean
 clean: ## Remove all simulation files
 	@echo -e "$(C_ORA)Removing all simulation files$(NC)"
-	rm -rf $(RUN_DIR) $(DPI_DIR)/*.o
+	rm -rf $(RUN_DIR) $(DPI_DIR)/*.ocle
 #______________________________________________________________________________
 
 .PHONY: clean

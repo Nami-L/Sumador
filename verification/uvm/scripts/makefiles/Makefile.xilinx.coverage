@@ -44,11 +44,11 @@ RUN_FLAGS ?= -onfinish quit
 CODE_COV  ?= true
 COV_FLAGS ?=
 
-# Coverage database and reports
-COV_DB     := $(COV_DIR)/coverage_$(TEST)_$(SEED).ucdb
-COV_REPORT := $(COV_DIR)/coverage_report_$(TEST)_$(SEED).rpt
-TOGGLE_REPORT := $(COV_DIR)/toggle_report_$(TEST)_$(SEED).rpt
 
+# Coverage variables
+COV_DB_NAME = $(COV_DIR)/coverage_db
+COV_HTML_DIR = $(COV_DIR)/html_report
+XSIM_COV_FLAGS = -covoverwrite
 # ================================  CONTROL  ==================================
 
 # Simulation mode switch
@@ -58,10 +58,7 @@ endif
 
 # Code Coverage switch
 ifeq ($(CODE_COV),true)
-	COV_FLAGS += --cover all
-	XVLOG_FLAGS += --cover all
-	XELAB_FLAGS += --cover all -coverage all
-	XSIM_FLAGS += -testcov -cover $(COV_DB)
+	COV_FLAGS += -cm line+tgl
 endif
 
 # ==============================  TOOLS SETUP  ================================
@@ -82,7 +79,6 @@ XVLOG_FLAGS = -sv $(XVLOG_DEFINES) $(FILES) \
 							-work work \
 							-L uvm \
 							$(XVLOG_DEFINES) \
-							--cover all \
 							-log $(LOGS_DIR)/compile.log
 
 XELAB_FLAGS = tb -debug all \
@@ -92,18 +88,20 @@ XELAB_FLAGS = tb -debug all \
 							-L work -L xil_defaultlib -L uvm \
 							-override_timeunit -override_timeprecision \
 							-L xpm -L unisims_ver -L unimacro_ver -L secureip \
-							--cover all -coverage all \
-							-log $(LOGS_DIR)/elaborate.log
+							-log $(LOGS_DIR)/elaborate.log  
 
-XSIM_FLAGS = work.tb -wdb $(WDB_DIR)/tb_$(TEST)_$(SEED).wdb \
+
+# -v 2    to check for C errors
+XSIM_FLAGS = work.tb -wdb $(WDB_DIR)/tb.wdb \
 						 -tclbatch $(TCL_DIR)/run.tcl \
 						 -testplusarg UVM_TESTNAME=$(TEST) \
 						 -testplusarg UVM_VERBOSITY=$(VERBOSITY) \
 						 -stats -onerror stop \
-						 -log $(LOGS_DIR)/simulate_$(TEST)_$(SEED).log \
+						 -log $(LOGS_DIR)/simulate.log \
 						 -sv_seed $(SEED) \
 						 $(RUN_FLAGS) \
-						 -testcov -cover $(COV_DB)
+						 $(XSIM_COV_FLAGS)
+
 
 WAVE_FLAGS = work.tb -view $(WDB_DIR)/tb.wdb -gui
 
@@ -150,6 +148,8 @@ SYNOPSYS_TOOLS = vivado xvlog xelab xsim
 .DEFAULT_GOAL := all
 SHELL         := bash
 
+
+
 .PHONY: all
 all: help
 #______________________________________________________________________________
@@ -190,6 +190,7 @@ vars: ## Print Makefile variables
 	@echo "VERDI_DIR   = $(VERDI_DIR)"
 	@echo "RTL_DIR     = $(RTL_DIR)"
 	@echo "DPI_DIR     = $(DPI_DIR)"
+	@echo "TCL_DIR     = $(TCL_DIR)"
 	@echo ""
 	@echo -e "$(C_ORA)UVM variables...$(NC)"
 	@echo "TEST        = $(TEST)"
@@ -201,11 +202,6 @@ vars: ## Print Makefile variables
 	@echo "RUN_FLAGS   = $(RUN_FLAGS)"
 	@echo "CODE_COV    = $(CODE_COV)"
 	@echo "COV_FLAGS   = $(COV_FLAGS)"
-	@echo ""
-	@echo -e "$(C_ORA)Coverage variables...$(NC)"
-	@echo "COV_DB      = $(COV_DB)"
-	@echo "COV_REPORT  = $(COV_REPORT)"
-	@echo "TOGGLE_REPORT = $(TOGGLE_REPORT)"
 	@echo ""
 #______________________________________________________________________________
 
@@ -225,10 +221,12 @@ elaborate: ## Runs XELAB elaboration
 .PHONY: sim
 sim: ## Runs XSIM simulation using SEED
 	@echo -e "$(C_ORA)Running simulation SEED=$(SEED)$(NC)"
-	@mkdir -p $(WDB_DIR) $(COV_DIR)
-	cd $(RUN_DIR) && xsim $(XSIM_FLAGS) 
-#______________________________________________________________________________
+	@mkdir -p $(WDB_DIR)
+	cd $(RUN_DIR) && xsim $(XSIM_FLAGS) $(COV_FLAGS)
+#_________________________________________________________________________________________________________________
 
+
+#______________________________________________________________________________
 .PHONY: random
 random: ## Runs simv simulation using a random seed
 	@echo -e "$(C_ORA)Running simulation with random seed$(NC)"
@@ -260,43 +258,6 @@ coverage: ## Create coverage report
 	cd $(RUN_DIR) && urg $(URG_FLAGS)
 #______________________________________________________________________________
 
-.PHONY: coverage_report
-coverage_report: ## Generate Vivado coverage reports from existing database
-	@echo -e "$(C_ORA)Generating Vivado coverage reports$(NC)"
-	@mkdir -p $(COV_DIR)
-	@if [ -f "$(RUN_DIR)/$(notdir $(COV_DB))" ]; then \
-		echo -e "$(C_ORA)Generating coverage report...$(NC)"; \
-		cd $(RUN_DIR) && xsim -r $(notdir $(COV_DB)) -coverreport $(notdir $(COV_REPORT)); \
-		echo -e "$(C_ORA)Generating toggle report...$(NC)"; \
-		cd $(RUN_DIR) && xsim -r $(notdir $(COV_DB)) -toggle_report $(notdir $(TOGGLE_REPORT)); \
-		mv $(RUN_DIR)/$(notdir $(COV_REPORT)) $(COV_REPORT); \
-		mv $(RUN_DIR)/$(notdir $(TOGGLE_REPORT)) $(TOGGLE_REPORT); \
-		echo -e "$(C_GRN)Coverage reports generated:$(NC)"; \
-		echo -e "  - Coverage: $(COV_REPORT)"; \
-		echo -e "  - Toggle: $(TOGGLE_REPORT)"; \
-	else \
-		echo -e "$(C_RED)Error: Coverage database not found: $(COV_DB)$(NC)"; \
-		echo -e "$(C_ORA)Run 'make sim CODE_COV=true' first$(NC)"; \
-		exit 1; \
-	fi
-
-.PHONY: view_coverage
-view_coverage: ## Open coverage in Vivado GUI
-	@echo -e "$(C_ORA)Opening coverage in Vivado GUI$(NC)"
-	@if [ -f "$(COV_DB)" ]; then \
-		vivado -mode gui -source $(TCL_DIR)/view_coverage.tcl $(COV_DB) & \
-	else \
-		echo -e "$(C_RED)Error: Coverage database not found: $(COV_DB)$(NC)"; \
-		echo -e "$(C_ORA)Run 'make sim CODE_COV=true' first$(NC)"; \
-		exit 1; \
-	fi
-
-.PHONY: run_cov
-run_cov: compile elaborate sim coverage_report ## Complete flow with coverage
-	@echo -e "$(C_GRN)Complete coverage flow finished$(NC)"
-	@echo -e "$(C_GRN)Coverage database: $(COV_DB)$(NC)"
-	@echo -e "$(C_GRN)Reports in: $(COV_DIR)$(NC)"
-
 .PHONY: compile-dpi
 compile-dpi: ## Run dpi (C/C++) compilation
 	@echo -e "$(C_ORA)Compiling dpi (C/C++) code$(NC)"
@@ -306,16 +267,10 @@ compile-dpi: ## Run dpi (C/C++) compilation
 .PHONY: clean
 clean: ## Remove all simulation files
 	@echo -e "$(C_ORA)Removing all simulation files$(NC)"
-	rm -rf $(RUN_DIR) $(DPI_DIR)/*.o $(COV_DIR)/*.ucdb $(COV_DIR)/*.rpt
+	rm -rf $(RUN_DIR) $(DPI_DIR)/*.o
 #______________________________________________________________________________
 
-.PHONY: clean-cov
-clean-cov: ## Remove coverage files
-	@echo -e "$(C_ORA)Removing coverage files$(NC)"
-	rm -rf $(COV_DIR)/*.ucdb $(COV_DIR)/*.rpt
-#______________________________________________________________________________
-
-.PHONY: clean-logs
+.PHONY: clean
 clean-logs: ## Remove logs
 	@echo -e "$(C_ORA)Removing all logs files$(NC)"
 	rm -rf $(LOGS_DIR)/*
@@ -338,12 +293,6 @@ help: ## Displays help message
 	@echo ""
 	@echo "--------------------------- Targets ----------------------------------"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "- make \033[36m%-15s\033[0m %s\n", $$1, $$2}'
-	@echo ""
-	@echo "--------------------------- New Coverage Targets --------------------"
-	@echo "- make run_cov           : Complete flow with coverage"
-	@echo "- make coverage_report   : Generate reports from existing database"
-	@echo "- make view_coverage     : Open coverage in Vivado GUI"
-	@echo "- make clean-cov         : Remove coverage files only"
 	@echo ""
 	@echo "--------------------------- Variables -------------------------------"
 	@echo "  TEST              : Name of UVM_TEST"
